@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>test</title>
+    <link href="/2022/01/02/test/"/>
+    <url>/2022/01/02/test/</url>
+    
+    <content type="html"><![CDATA[<p>你好，世界！</p><p>这是一个测试文档。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2022/01/02/hello-world/"/>
     <url>/2022/01/02/hello-world/</url>
