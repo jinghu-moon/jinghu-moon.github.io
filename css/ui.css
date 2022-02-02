@@ -400,3 +400,7 @@ table tr td:last-child {
 .navbar .dropdown-item {
   padding-left: 10px;
 }
+
+.index-header {
+  font-family: '微软雅黑';
+}
