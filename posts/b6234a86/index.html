@@ -26,14 +26,12 @@
 <meta property="og:site_name" content="镜湖月的小世界">
 <meta property="og:description" content="在 Fluid 主题下，实现首页 Slogan 处一言 &#x2F; 今日诗词 &#x2F; text 的自由切换，同时简单解释代码是如何实现的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%20%E6%A0%B7%E5%BC%8F%E5%BC%95%E5%85%A5-16427462536581.png">
 <meta property="article:published_time" content="2022-01-17T04:43:05.000Z">
-<meta property="article:modified_time" content="2022-01-29T10:01:56.230Z">
+<meta property="article:modified_time" content="2022-02-02T01:26:54.536Z">
 <meta property="article:author" content="镜湖月">
 <meta property="article:tag" content="一言">
 <meta property="article:tag" content="今日诗词">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%20%E6%A0%B7%E5%BC%8F%E5%BC%95%E5%85%A5-16427462536581.png">
   
   <meta name="baidu-site-verification" content="code-n6bkp7lyqx" />
   <title>在首页 Slogan 处添加一言 / 今日诗词 - 镜湖月的小世界</title>
@@ -235,7 +233,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9.3k 字
+      9.4k 字
     </span>
   
 
@@ -285,7 +283,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 天前
+                  本文最后更新于：2 分钟前
                 
               </p>
             
@@ -300,7 +298,7 @@
 <p>官网：<a target="_blank" rel="noopener" href="https://www.jinrishici.com/">https://www.jinrishici.com/</a> 、开发文档：<a target="_blank" rel="noopener" href="https://www.jinrishici.com/doc/">https://www.jinrishici.com/doc/</a></p>
 <p>今日诗词 API 是一个可以返回一句古诗词名句的接口。它可以通过图片和 JSON 格式调用。今日诗词 API 根据不同地点、时间、节日、季节、天气、景观、城市进行智能推荐。</p>
 <p>下面开始讲解首页 Slogan 上如何显示一言 / 今日诗词。</p>
-<h2 id="1-2-typed-ejs"><a href="#1-2-typed-ejs" class="headerlink" title="1.2 typed.ejs"></a>1.2 typed.ejs</h2><p>进入路径：Blog\themes\fluid\layout\_partial\plugins。打开 <code>typed.ejs</code> 文件。复制下面的代码覆盖掉 <code>typed.ejs</code> 文件原有的代码。</p>
+<h2 id="1-2-typed-ejs"><a href="#1-2-typed-ejs" class="headerlink" title="1.2 typed.ejs"></a>1.2 typed.ejs</h2><p>进入路径 Blog\themes\fluid\layout\_partial\plugins。打开 <code>typed.ejs</code> 文件。复制下面的代码覆盖掉 <code>typed.ejs</code> 文件原有的代码。</p>
 <p><strong>注意，不能用代码格式化插件格式化代码。格式化会报错。</strong></p>
 <div class="code-wrapper"><pre><code class="hljs js">&lt;% <span class="hljs-keyword">if</span>(theme.fun_features.typing.enable &amp;&amp; page.subtitle !== <span class="hljs-literal">false</span>)&#123; %&gt; &lt;%-
 js_ex(theme.static_prefix.typed, <span class="hljs-string">&quot;/typed.min.js&quot;</span>) %&gt;
@@ -540,7 +538,7 @@ typing(<span class="hljs-string">&quot;hitokoto&quot;</span>, <span class="hljs-
     <span class="hljs-attribute">text-align</span>: right <span class="hljs-meta">!important</span>;
 &#125;</code></pre></div>
 
-<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%20%E6%A0%B7%E5%BC%8F%E5%BC%95%E5%85%A5-16427462536581.png" srcset="/img/loading.gif" lazyload alt="01 样式引入"></p>
+<p>![01 样式引入](Fluid-主题在首页-Slogan-处题添加一言-今日诗词images/01 样式引入.png)</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://pxxyyz.com/posts/30454/#typed.ejs">Typing+hitokoto+jinrishici - 卤蛋的自我修养 (pxxyyz.com)</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.yousazoe.top/archives/e5b4d2d6.html">Hexo-Fluid 博客建站记录 | Fl0w3r (yousazoe.top)</a></li>
