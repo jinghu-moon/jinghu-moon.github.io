@@ -392,3 +392,11 @@ table tr td:last-child {
   top: 10px;
   left: 20px;
 }
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  min-width: 120px;
+}
+
+.navbar .dropdown-item {
+  padding-left: 10px;
+}
