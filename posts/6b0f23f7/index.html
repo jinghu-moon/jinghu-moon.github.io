@@ -16,24 +16,27 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+  <meta name="description" content="首页顶部添加公告栏，公告栏内容实现打字机效果。">
   <meta name="author" content="镜湖月">
   <meta name="keywords" content="镜湖月,博客,Blog,Hexo">
-  <meta name="description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+  <meta name="description" content="首页顶部添加公告栏，公告栏内容实现打字机效果。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo + Github 搭建博客 1 — 预备知识">
-<meta property="og:url" content="https://jinghumoon.top/posts/2335de7c/index.html">
+<meta property="og:title" content="博客首页添加公告栏">
+<meta property="og:url" content="https://jinghumoon.top/posts/6b0f23f7/index.html">
 <meta property="og:site_name" content="镜湖月的小世界">
-<meta property="og:description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+<meta property="og:description" content="首页顶部添加公告栏，公告栏内容实现打字机效果。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-28T07:02:47.000Z">
-<meta property="article:modified_time" content="2022-02-07T08:04:21.041Z">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif">
+<meta property="article:published_time" content="2022-02-13T09:00:11.000Z">
+<meta property="article:modified_time" content="2022-02-13T13:40:29.821Z">
 <meta property="article:author" content="镜湖月">
-<meta property="article:tag" content="镜湖月,博客,Blog,Hexo">
+<meta property="article:tag" content="公告栏">
+<meta property="article:tag" content="Typed.js">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif">
   
   <meta name="baidu-site-verification" content="code-n6bkp7lyqx" />
-  <title>Hexo + Github 搭建博客 1 — 预备知识 - 镜湖月的小世界</title>
+  <title>博客首页添加公告栏 - 镜湖月的小世界</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -221,7 +224,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hexo + Github 搭建博客 1 — 预备知识">
+            <span class="h2" id="subtitle" title="博客首页添加公告栏">
               
             </span>
 
@@ -238,8 +241,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-28 15:02" pubdate>
-        2022年2月28日 下午
+      <time datetime="2022-02-13 17:00" pubdate>
+        2022年2月13日 下午
       </time>
     </span>
   
@@ -249,7 +252,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      3.2k 字
     </span>
   
 
@@ -258,7 +261,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      10 分钟
     </span>
   
 
@@ -295,16 +298,182 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo + Github 搭建博客 1 — 预备知识</h1>
+            <h1 style="display: none">博客首页添加公告栏</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：6 天前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              
+              <p>本教程适用于 <strong>Fluid</strong> 主题，别的主题，按照主题代码结构，简单修改即可。</p>
+<h2 id="1-1-broadcast-ejs"><a href="#1-1-broadcast-ejs" class="headerlink" title="1.1 broadcast.ejs"></a>1.1 broadcast.ejs</h2><p>进入 Blog\themes\fluid\layout_partial 路径，新建 <code>broadcast.ejs</code> 文件。添加以下代码。</p>
+<div class="code-wrapper"><pre><code class="hljs ejs">&lt;% if (theme.broadcast.enable &amp;&amp; !page.layout)&#123; %&gt;
+    &lt;div class=&quot;notice&quot;&gt;
+        &lt;svg class=&quot;icon-laba&quot; aria-hidden=&quot;true&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-laba&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;notice-content&quot;&gt;
+            &lt;span class=&quot;element&quot;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.12/typed.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var typed = new Typed(&quot;.element&quot;, &#123;
+            strings: [&quot;&lt;%= theme.broadcast.text %&gt;&quot;],  //输入内容, 支持html标签
+            startDelay: 0,                             //开始延迟
+            typeSpeed: 50,                             //打字速度，数字越大，速度越慢。
+            backSpeed: 75,                             //回退速度
+            loop: false,                               //是否循环
+            showCursor: true,                          //显示游标
+            cursorChar: &#x27;_&#x27;,                           //游标样式
+        &#125;);
+    &lt;/script&gt;
+&lt;% &#125; %&gt;</code></pre></div>
+
+<h2 id="1-2-broadcast-css"><a href="#1-2-broadcast-css" class="headerlink" title="1.2 broadcast.css"></a>1.2 broadcast.css</h2><p>进入 Blog\source\css 路径，新建 <code>broadcast.css</code> 文件。添加以下代码。</p>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 小喇叭特效 */</span>
+<span class="hljs-keyword">@keyframes</span> scaleDraw &#123;
+
+    <span class="hljs-comment">/*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/</span>
+    <span class="hljs-number">0%</span> &#123;
+        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
+        <span class="hljs-comment">/*开始为原始大小*/</span>
+    &#125;
+
+    <span class="hljs-number">25%</span> &#123;
+        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>);
+        <span class="hljs-comment">/*放大1.2倍*/</span>
+    &#125;
+
+    <span class="hljs-number">50%</span> &#123;
+        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
+    &#125;
+
+    <span class="hljs-number">75%</span> &#123;
+        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>);
+    &#125;
+&#125;
+
+<span class="hljs-selector-class">.icon-laba</span> &#123;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">top</span>: -<span class="hljs-number">3px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+    -webkit-<span class="hljs-attribute">animation-name</span>: scaleDraw;
+    <span class="hljs-comment">/*关键帧名称*/</span>
+    -webkit-<span class="hljs-attribute">animation-timing-function</span>: ease-in-out;
+    <span class="hljs-comment">/*动画的速度曲线*/</span>
+    -webkit-<span class="hljs-attribute">animation-iteration-count</span>: infinite;
+    <span class="hljs-comment">/*动画播放的次数*/</span>
+    -webkit-<span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">1.2s</span>;
+    <span class="hljs-comment">/*动画所花费的时间*/</span>
+    -webkit-<span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1.2s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1.2s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
+&#125;
+
+<span class="hljs-selector-class">.typed-cursor</span> &#123;
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    -webkit-<span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
+    -moz-<span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
+    <span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">font-weight</span>: bolder;
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">5px</span>;
+&#125;
+
+<span class="hljs-comment">/* 光标特效 */</span>
+<span class="hljs-keyword">@keyframes</span> blink &#123;
+    <span class="hljs-number">0%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    &#125;
+
+    <span class="hljs-number">50%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    &#125;
+
+    <span class="hljs-number">100%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">@-webkit-keyframes</span> blink &#123;
+    <span class="hljs-number">0%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    &#125;
+
+    <span class="hljs-number">50%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    &#125;
+
+    <span class="hljs-number">100%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    &#125;
+&#125;
+
+<span class="hljs-keyword">@-moz-keyframes</span> blink &#123;
+    <span class="hljs-number">0%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    &#125;
+
+    <span class="hljs-number">50%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+    &#125;
+
+    <span class="hljs-number">100%</span> &#123;
+        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    &#125;
+&#125;
+
+<span class="hljs-selector-class">.notice_board</span> &#123;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+&#125;
+
+<span class="hljs-selector-class">.notice</span> &#123;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span> <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.5rem</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">13px</span>;
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+&#125;</code></pre></div>
+
+<h2 id="1-3-layout-ejs"><a href="#1-3-layout-ejs" class="headerlink" title="1.3 layout.ejs"></a>1.3 layout.ejs</h2><p>进入 Blog\themes\fluid\layout 路径，打开 <code>layout.ejs</code> 文件。添加以下代码。</p>
+<div class="code-wrapper"><pre><code class="hljs ejs">&lt;main&gt;
+    &lt;% if(is_post() || page.layout === &#x27;404&#x27;) &#123; %&gt;
+      &lt;%- body %&gt;
+    &lt;% &#125; else &#123; %&gt;
+      &lt;div class=&quot;container nopadding-x-md&quot;&gt;
+        &lt;!-- 公告栏 添加代码 --&gt;
+        &lt;div id=&quot;board&quot; class=&quot;notice_board&quot;&gt;
+          &lt;% if (theme.broadcast.enable)&#123; %&gt;
+          &lt;%- partial(&#x27;_partial/broadcast&#x27;) %&gt;
+          &lt;% &#125; %&gt;
+        &lt;/div&gt;</code></pre></div>
+
+<h2 id="1-4-config-fluid-yml"><a href="#1-4-config-fluid-yml" class="headerlink" title="1.4 _config.fluid.yml"></a>1.4 _config.fluid.yml</h2><p>在 <code>_config.fluid.yml</code> 中添加以下代码。</p>
+<div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-comment"># 公告栏</span>
+<span class="hljs-attr">broadcast:</span>
+  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>   				  <span class="hljs-comment"># true 开启，false 关闭。</span>
+  <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-laba&quot;</span>  	   <span class="hljs-comment"># fontawesome 图标库</span>
+  <span class="hljs-attr">text:</span> <span class="hljs-string">看的文章越多，越深感自己的不足，后面的时间，我将把精力放在学习新知识上。博客将停更一段时间。等我回来！</span></code></pre></div>
+
+<p>建议 <strong>text</strong> 字数不要超过 50。字数大于 63，就会换行。</p>
+<p>引入 JS。</p>
+<div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">custom_js:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">//at.alicdn.com/t/font_2976433_kdpcclj023.js</span></code></pre></div>
+
+<p>使用 <a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里巴巴矢量图标库</a> 的彩色图标，需要引入 JS，不是引入 CSS。</p>
+<p>使用方法： <a target="_blank" rel="noopener" href="https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&helptype=code">图标使用介绍 - 阿里巴巴矢量图标库</a> 。</p>
+<p>同时测试得：<strong>font-class</strong> 引用，不能实现图标动画效果。<strong>symbol</strong> 引用，可以实现。</p>
+<p>完成效果如下：</p>
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif" srcset="/img/loading.gif" lazyload alt="01~效果展示"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.justlovesmile.top/posts/57206.html">Hexo博客 | 如何在博客首页添加公告板模块 | Justlovesmile’s BLOG</a> </li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/37ff22decc62">JS插件，酷炫的打字机效果: Typed.js - 简书 (jianshu.com)</a> </li>
+<li><a target="_blank" rel="noopener" href="https://mattboldt.github.io/typed.js/docs/">Typed.js | Documentation (mattboldt.github.io)</a> </li>
+</ul>
+
             </div>
             <hr>
             <div>
@@ -313,16 +482,25 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                      <a class="hover-with-bg" href="/categories/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/">博客美化</a>
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%85%AC%E5%91%8A%E6%A0%8F/">公告栏</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Typed-js/">Typed.js</a>
+                    
+                  </div>
                 
               </div>
               
               <p class="note note-warning">
                 <strong>本文作者: </strong><a href="/">jinghu-moon</a> <br>
-                <strong>本文链接: </strong><a href="https://jinghumoon.top/posts/2335de7c/">https://jinghumoon.top/posts/2335de7c/</a> <br>
+                <strong>本文链接: </strong><a href="https://jinghumoon.top/posts/6b0f23f7/">https://jinghumoon.top/posts/6b0f23f7/</a> <br>
                 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
                    </p>
                    
@@ -331,9 +509,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/4b3e013f/">
+                      <a href="/posts/2335de7c/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo + Github 搭建博客 2 — 初步搭建</span>
+                        <span class="hidden-mobile">Hexo + Github 搭建博客 1 — 预备知识</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -341,8 +519,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/6b0f23f7/">
-                        <span class="hidden-mobile">博客首页添加公告栏</span>
+                      <a href="/posts/3975482a/">
+                        <span class="hidden-mobile">为你的博客添加书签页</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -576,7 +754,7 @@
         });
     }
     
-        typing("subtitle", "Hexo + Github 搭建博客 1 — 预备知识")
+        typing("subtitle", "博客首页添加公告栏")
     
 
   </script>
