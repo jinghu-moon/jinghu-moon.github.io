@@ -42,6 +42,52 @@
   
   
   <entry>
+    <title>Github SSH 配置</title>
+    <link href="/posts/3164d411/"/>
+    <url>/posts/3164d411/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-1-Github-SSH-简介"><a href="#1-1-Github-SSH-简介" class="headerlink" title="1.1 Github SSH 简介"></a>1.1 Github SSH 简介</h2><p>当我们频繁操作 GitHub 时，需要输入密码来验证账户，为了简化我们的 pull/push 过程，我们需要设置 SSH Key。</p><p>使用 SSH 协议可以连接远程服务器和服务并向它们验证。 利用 SSH 密钥可以连接 GitHub，而无需在每次访问时都提供用户名和个人访问令牌。比较方便。</p><p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/about-ssh">关于 SSH - GitHub Docs</a></p><h2 id="1-1-生成密钥"><a href="#1-1-生成密钥" class="headerlink" title="1.1 生成密钥"></a>1.1 生成密钥</h2><p>1、查看 Git 环境所有配置，输入以下命令：</p><div class="code-wrapper"><pre><code class="hljs bash">git config --list</code></pre></div><p>2、如果没有配置 <code>user.name</code> 和 <code>user.email</code> ，则需要先配置。</p><p>3、配置用户名，随意。</p><div class="code-wrapper"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;用户名&quot;</span><span class="hljs-comment"># 示例</span>git config --global user.name <span class="hljs-string">&quot;ziguanqing&quot;</span></code></pre></div><p>4、配置邮箱，必须为 GitHub 邮箱。</p><div class="code-wrapper"><pre><code class="hljs bash">git config --global user.email <span class="hljs-string">&quot;123456@qq.com&quot;</span><span class="hljs-comment"># 示例</span>git config --global user.email <span class="hljs-string">&quot;2027004326@qq.com&quot;</span></code></pre></div><p>配置完，如下：</p><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01-%E6%9F%A5%E7%9C%8BGit%E9%85%8D%E7%BD%AE.png" alt="01-查看Git配置"></p><p>5、进入 SSH Key 目录</p><div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh</code></pre></div><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/02-%E8%BF%9B%E5%85%A5SSH_Key%20%E7%9B%AE%E5%BD%95.png" alt="02-进入SSH_Key 目录"></p><p>6、生成密钥</p><p>执行以下命令，生成公钥和私钥</p><div class="code-wrapper"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;github邮箱&quot;</span><span class="hljs-comment"># 示例</span>ssh-keygen -t rsa -C <span class="hljs-string">&quot;2027004326@qq.com&quot;</span></code></pre></div><p>生成密钥，一共需要按四次 <code>enter</code> 键。</p><p>成功生成密钥，界面如下：</p><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/03-SSH_Key%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B.png" alt="03-SSH_Key配置流程"></p><p>7、查看 <code>.ssh</code> 目录下文件</p><p>输入以下命令：</p><div class="code-wrapper"><pre><code class="hljs bash">ls</code></pre></div><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/04-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6.png" alt="04-查看目录文件"></p><p>8、查看公钥并复制</p><p>输入以下命令：</p><div class="code-wrapper"><pre><code class="hljs bash">cat id_rsa.pub</code></pre></div><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/05-%E5%A4%8D%E5%88%B6%E5%85%AC%E9%92%A5.png" alt="05-复制公钥"></p><h2 id="1-2-复制密钥到-Github"><a href="#1-2-复制密钥到-Github" class="headerlink" title="1.2 复制密钥到 Github"></a>1.2 复制密钥到 Github</h2><p>进入 Github 网站，「Setting」→「SSH and GPG keys」→「New SSH key」 ，取个名字，粘贴密钥保存即可。</p><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/06-%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5.png" alt="06-添加公钥"></p><h2 id="1-3-验证是否配置成功"><a href="#1-3-验证是否配置成功" class="headerlink" title="1.3 验证是否配置成功"></a>1.3 验证是否配置成功</h2><p>1、打开 Git bash ，输入以下命令。</p><div class="code-wrapper"><pre><code class="hljs bash">ssh -T git@github.com</code></pre></div><p>显示 <code>successful</code> 表示配置成功！</p><p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/07-%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F.png" alt="07-配置成功"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Github</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用 GitHub Actions 实现博客的自动化部署</title>
+    <link href="/posts/8af89cd1/"/>
+    <url>/posts/8af89cd1/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-1-GitHub-Actions-简介"><a href="#1-1-GitHub-Actions-简介" class="headerlink" title="1.1 GitHub Actions 简介"></a>1.1 GitHub Actions 简介</h2><p><a href="https://github.com/features/actions">Github Action</a> 是 GitHub 于 2018 年 10 月推出的一个 CI/CD 服务。GitHub Actions 让我们轻松实现所有软件工作流程的自动化，从 GitHub 上直接构建、测试和部署我们的代码。让代码审查、分支管理和问题处理以我们想要的方式进行。</p><p><strong>什么是 CI/CD？</strong></p><p>CI/CD  是三件事情：持续集成 — <code>Continuous Integration</code> 、持续交付 — <code>Continuous Delivery</code> 、持续部署 — <code>Continuous Deployment</code> 。因为「持续交付」和「持续部署」的英文缩写一致，所以这三件事情缩写成 <code>CI/CD</code> 。</p><p><strong>使用教程</strong></p><ul><li><a href="https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程 - 阮一峰的网络日志 (ruanyifeng.com)</a> </li><li><a href="https://www.bilibili.com/video/BV1RE411R7Uy?from=search&seid=8899544372089006949">【CI/CD】github新功能actions全方位讲解！！ - bilibili</a> </li></ul><p><strong>费用计算</strong></p><ul><li><p>公开仓库，免费使用，无限制。</p></li><li><p>私有仓库，如下图。</p><p>![01-GitHub Actions 使用费用](使用-GitHub-Actions-实现博客的自动化部署images/01-GitHub Actions使用费用.png)</p><p>简单解释下计费规则。以下内容均来自 <a href="https://docs.github.com/cn/billing/managing-billing-for-github-actions">管理 GitHub Actions 的计费 - GitHub Docs</a> 。</p><ul><li>在 GitHub 主机的 Windows 运行器上运行的作业，其消耗分钟数是在 Linux 运行器上运行的作业的 2 倍。即使用 1000 Windows 分钟将消耗帐户中包含的 2,000 分钟。</li><li>无须担心，我们的 GitHub Actions 运行在 Linux 运行器。经测试，一次 Actions 大约需要 1 分钟。即，一个月我们可以提交代码 2000 次。平均每天接近 70 次。</li><li>当然，随着博客内容的增多，Actions 时间也会增加。假设需要需要 5 分钟。一天也可以提交 10 来次代码。足够了。如果还不够，用公开仓库。（不推荐）</li><li>「GitHub 主页」→「Settings」→「点击 Billing and plans 一栏」→「右侧，下滑，Actions 处」，查看使用记录详情。</li></ul></li></ul><p>下面开始介绍自动化部署流程。</p><h2 id="1-2-Github-SSH-配置"><a href="#1-2-Github-SSH-配置" class="headerlink" title="1.2 Github SSH 配置"></a>1.2 Github SSH 配置</h2><h2 id="1-3-新建仓库"><a href="#1-3-新建仓库" class="headerlink" title="1.3 新建仓库"></a>1.3 新建仓库</h2><p>建立一个<strong>私人</strong>仓库，存放博客源码。</p><p><img src="%E4%BD%BF%E7%94%A8-GitHub-Actions-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2images/02-%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.png" alt="02-新建仓库"></p><p>然后拉取到本地。</p><ul><li><p>法一</p><ul><li><p>新建文件夹，进入，右键打开 Git Bash here。</p><div class="code-wrapper"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> git@github.com:jinghu-moon/Blog_Source_Files.git</code></pre></div></li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>博客优化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GitHub Actions</tag>
+      
+      <tag>自动化部署</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>博客首页添加公告栏</title>
     <link href="/posts/6b0f23f7/"/>
     <url>/posts/6b0f23f7/</url>

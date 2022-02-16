@@ -16,25 +16,50 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+  <meta name="description" content="如题">
   <meta name="author" content="镜湖月">
   <meta name="keywords" content="镜湖月,博客,Blog,Hexo">
-  <meta name="description" content="仰天长啸出门去，我辈岂是蓬蒿人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://jinghumoon.top/archives/2022/01/index.html">
+  <meta name="description" content="如题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github SSH 配置">
+<meta property="og:url" content="https://jinghumoon.top/posts/3164d411/index.html">
 <meta property="og:site_name" content="镜湖月的小世界">
-<meta property="og:description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+<meta property="og:description" content="如题">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01-%E6%9F%A5%E7%9C%8BGit%E9%85%8D%E7%BD%AE.png">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/02-%E8%BF%9B%E5%85%A5SSH_Key%20%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/03-SSH_Key%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/04-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/05-%E5%A4%8D%E5%88%B6%E5%85%AC%E9%92%A5.png">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/06-%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5.png">
+<meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/07-%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F.png">
+<meta property="article:published_time" content="2022-02-16T06:58:22.000Z">
+<meta property="article:modified_time" content="2022-02-16T08:49:38.577Z">
 <meta property="article:author" content="镜湖月">
 <meta property="article:tag" content="镜湖月,博客,Blog,Hexo">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01-%E6%9F%A5%E7%9C%8BGit%E9%85%8D%E7%BD%AE.png">
   
   <meta name="baidu-site-verification" content="code-n6bkp7lyqx" />
-  <title>归档 - 镜湖月的小世界</title>
+  <title>Github SSH 配置 - 镜湖月的小世界</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +96,7 @@
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -199,23 +224,63 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://gitee.com/jinghu-moon/imgbed/raw/master/images/归档.jpg') no-repeat center center;
+         style="background: url('https://gitee.com/jinghu-moon/imgbed/raw/master/images/053 Soft Grass.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="Github SSH 配置">
               
             </span>
 
             
-              
-                  <br>
-                  <span class="h2" id="jinrishici">
-                  
-                  </span>
-              
-          
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      镜湖月
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-16 14:58" pubdate>
+        2022年2月16日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      833 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
@@ -228,64 +293,173 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 14 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/posts/3a62d20/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">为你的博客添加谷歌翻译</span>
-      <time style="float: right;">01-28</time>
-    </a>
-  
-    
-    <a href="/posts/b7a3bf10/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">在页脚快速使用一言 / 今日诗词</span>
-      <time style="float: right;">01-17</time>
-    </a>
-  
-    
-    <a href="/posts/b6234a86/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">在首页 Slogan 处添加一言 / 今日诗词</span>
-      <time style="float: right;">01-17</time>
-    </a>
-  
-    
-    <a href="/posts/9113742/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">中文技术文档写作规范</span>
-      <time style="float: right;">01-13</time>
-    </a>
-  
-    
-    <a href="/posts/d87f7e0c/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">test</span>
-      <time style="float: right;">01-03</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Github SSH 配置</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="1-1-Github-SSH-简介"><a href="#1-1-Github-SSH-简介" class="headerlink" title="1.1 Github SSH 简介"></a>1.1 Github SSH 简介</h2><p>当我们频繁操作 GitHub 时，需要输入密码来验证账户，为了简化我们的 pull/push 过程，我们需要设置 SSH Key。</p>
+<p>使用 SSH 协议可以连接远程服务器和服务并向它们验证。 利用 SSH 密钥可以连接 GitHub，而无需在每次访问时都提供用户名和个人访问令牌。比较方便。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/about-ssh">关于 SSH - GitHub Docs</a></p>
+<h2 id="1-1-生成密钥"><a href="#1-1-生成密钥" class="headerlink" title="1.1 生成密钥"></a>1.1 生成密钥</h2><p>1、查看 Git 环境所有配置，输入以下命令：</p>
+<div class="code-wrapper"><pre><code class="hljs bash">git config --list</code></pre></div>
 
+<p>2、如果没有配置 <code>user.name</code> 和 <code>user.email</code> ，则需要先配置。</p>
+<p>3、配置用户名，随意。</p>
+<div class="code-wrapper"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;用户名&quot;</span>
 
+<span class="hljs-comment"># 示例</span>
+git config --global user.name <span class="hljs-string">&quot;ziguanqing&quot;</span></code></pre></div>
 
+<p>4、配置邮箱，必须为 GitHub 邮箱。</p>
+<div class="code-wrapper"><pre><code class="hljs bash">git config --global user.email <span class="hljs-string">&quot;123456@qq.com&quot;</span>
 
-              </div>
+<span class="hljs-comment"># 示例</span>
+git config --global user.email <span class="hljs-string">&quot;2027004326@qq.com&quot;</span></code></pre></div>
+
+<p>配置完，如下：</p>
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01-%E6%9F%A5%E7%9C%8BGit%E9%85%8D%E7%BD%AE.png" srcset="/img/loading.gif" lazyload alt="01-查看Git配置"></p>
+<p>5、进入 SSH Key 目录</p>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~/.ssh</code></pre></div>
+
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/02-%E8%BF%9B%E5%85%A5SSH_Key%20%E7%9B%AE%E5%BD%95.png" srcset="/img/loading.gif" lazyload alt="02-进入SSH_Key 目录"></p>
+<p>6、生成密钥</p>
+<p>执行以下命令，生成公钥和私钥</p>
+<div class="code-wrapper"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;github邮箱&quot;</span>
+
+<span class="hljs-comment"># 示例</span>
+ssh-keygen -t rsa -C <span class="hljs-string">&quot;2027004326@qq.com&quot;</span></code></pre></div>
+
+<p>生成密钥，一共需要按四次 <code>enter</code> 键。</p>
+<p>成功生成密钥，界面如下：</p>
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/03-SSH_Key%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="03-SSH_Key配置流程"></p>
+<p>7、查看 <code>.ssh</code> 目录下文件</p>
+<p>输入以下命令：</p>
+<div class="code-wrapper"><pre><code class="hljs bash">ls</code></pre></div>
+
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/04-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6.png" srcset="/img/loading.gif" lazyload alt="04-查看目录文件"></p>
+<p>8、查看公钥并复制</p>
+<p>输入以下命令：</p>
+<div class="code-wrapper"><pre><code class="hljs bash">cat id_rsa.pub</code></pre></div>
+
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/05-%E5%A4%8D%E5%88%B6%E5%85%AC%E9%92%A5.png" srcset="/img/loading.gif" lazyload alt="05-复制公钥"></p>
+<h2 id="1-2-复制密钥到-Github"><a href="#1-2-复制密钥到-Github" class="headerlink" title="1.2 复制密钥到 Github"></a>1.2 复制密钥到 Github</h2><p>进入 Github 网站，「Setting」→「SSH and GPG keys」→「New SSH key」 ，取个名字，粘贴密钥保存即可。</p>
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/06-%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5.png" srcset="/img/loading.gif" lazyload alt="06-添加公钥"></p>
+<h2 id="1-3-验证是否配置成功"><a href="#1-3-验证是否配置成功" class="headerlink" title="1.3 验证是否配置成功"></a>1.3 验证是否配置成功</h2><p>1、打开 Git bash ，输入以下命令。</p>
+<div class="code-wrapper"><pre><code class="hljs bash">ssh -T git@github.com</code></pre></div>
+
+<p>显示 <code>successful</code> 表示配置成功！</p>
+<p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/07-%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F.png" srcset="/img/loading.gif" lazyload alt="07-配置成功"></p>
+
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Github/">Github</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">jinghu-moon</a> <br>
+                <strong>本文链接: </strong><a href="https://jinghumoon.top/posts/3164d411/">https://jinghumoon.top/posts/3164d411/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/2335de7c/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo + Github 搭建博客 1 — 预备知识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/8af89cd1/">
+                        <span class="hidden-mobile">使用 GitHub Actions 实现博客的自动化部署</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"twikoo-1gm6e00d45434bda","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.plugins.initFancyBox('#twikoo .tk-content img:not(.tk-owo-emotion)');
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header">TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -421,6 +595,19 @@
 
 
 
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
 
 
 
@@ -449,7 +636,7 @@
         });
     }
     
-        typing("subtitle", "归档")
+        typing("subtitle", "Github SSH 配置")
     
 
   </script>
