@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/04-%E6%8E%A8%E9%80%81%E6%88%90%E5%8A%9F.png">
 <meta property="og:image" content="https://gitee.com/jinghu-moon/imgbed/raw/master/images/05-%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2.png">
 <meta property="article:published_time" content="2022-02-15T07:58:14.000Z">
-<meta property="article:modified_time" content="2022-02-17T08:00:35.000Z">
+<meta property="article:modified_time" content="2022-02-17T08:25:49.300Z">
 <meta property="article:author" content="镜湖月">
 <meta property="article:tag" content="GitHub Actions">
 <meta property="article:tag" content="自动化部署">
@@ -306,7 +306,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：17 分钟前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
@@ -367,6 +367,7 @@
 <h2 id="1-6-编写-GitHub-Actions"><a href="#1-6-编写-GitHub-Actions" class="headerlink" title="1.6 编写 GitHub Actions"></a>1.6 编写 GitHub Actions</h2><p>以下的内容，不懂也没关系。我也不懂 🤣。直接复制，稍作修改，就行。如果你想了解 GitHub Actions 的使用，请看文章开头。我给了相应的链接。</p>
 <p>在<strong>本地</strong>的博客文件夹内，进入 \.github\workflows 路径，没有的话，就建立该路径。新建一个 <code>auto_deploy.yml</code> 文件。打开 Blog\.github\workflows\auto_deploy.yml，添加以下内容。</p>
 <p>用户名，GitHub 邮箱记得修改成自己的。</p>
+<p>必须安装 <strong>hexo-deployer-git</strong> 插件。</p>
 <div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-comment"># workflow name</span>
 <span class="hljs-attr">name:</span> <span class="hljs-string">博客自动化部署</span>
 
