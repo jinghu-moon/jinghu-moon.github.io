@@ -225,21 +225,14 @@
   </url>
   
   <url>
+    <loc>https://jinghumoon.top/tags/%E6%96%87%E7%AB%A0%E6%BC%AB%E6%B8%B8/</loc>
+    <lastmod>2022-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://jinghumoon.top/tags/%E8%B0%B7%E6%AD%8C%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2022-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jinghumoon.top/tags/GitHub-Actions/</loc>
-    <lastmod>2022-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jinghumoon.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -260,7 +253,14 @@
   </url>
   
   <url>
-    <loc>https://jinghumoon.top/tags/%E6%96%87%E7%AB%A0%E6%BC%AB%E6%B8%B8/</loc>
+    <loc>https://jinghumoon.top/tags/GitHub-Actions/</loc>
+    <lastmod>2022-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jinghumoon.top/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
