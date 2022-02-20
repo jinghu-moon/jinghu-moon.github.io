@@ -232,13 +232,6 @@
   </url>
   
   <url>
-    <loc>https://jinghumoon.top/tags/%E8%B0%B7%E6%AD%8C%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2022-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jinghumoon.top/tags/%E5%85%AC%E5%91%8A%E6%A0%8F/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,6 +240,13 @@
   
   <url>
     <loc>https://jinghumoon.top/tags/Typed-js/</loc>
+    <lastmod>2022-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jinghumoon.top/tags/%E8%B0%B7%E6%AD%8C%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -267,20 +267,6 @@
   </url>
   
   <url>
-    <loc>https://jinghumoon.top/tags/Twikoo/</loc>
-    <lastmod>2022-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://jinghumoon.top/tags/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA/</loc>
-    <lastmod>2022-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jinghumoon.top/tags/%E4%B8%80%E8%A8%80/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -289,6 +275,20 @@
   
   <url>
     <loc>https://jinghumoon.top/tags/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D/</loc>
+    <lastmod>2022-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jinghumoon.top/tags/Twikoo/</loc>
+    <lastmod>2022-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://jinghumoon.top/tags/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -304,14 +304,14 @@
 
   
   <url>
-    <loc>https://jinghumoon.top/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://jinghumoon.top/categories/Github/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jinghumoon.top/categories/Github/</loc>
+    <loc>https://jinghumoon.top/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2022-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
