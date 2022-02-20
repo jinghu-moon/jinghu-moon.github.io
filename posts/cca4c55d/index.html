@@ -16,25 +16,42 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+  <meta name="description" content="如题">
   <meta name="author" content="镜湖月">
   <meta name="keywords" content="镜湖月,博客,Blog,Hexo">
-  <meta name="description" content="仰天长啸出门去，我辈岂是蓬蒿人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="镜湖月的小世界">
-<meta property="og:url" content="https://jinghumoon.top/page/2/index.html">
+  <meta name="description" content="如题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客实现文章随机漫游功能">
+<meta property="og:url" content="https://jinghumoon.top/posts/cca4c55d/index.html">
 <meta property="og:site_name" content="镜湖月的小世界">
-<meta property="og:description" content="仰天长啸出门去，我辈岂是蓬蒿人">
+<meta property="og:description" content="如题">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-20T07:45:00.000Z">
+<meta property="article:modified_time" content="2022-02-20T07:53:36.920Z">
 <meta property="article:author" content="镜湖月">
-<meta property="article:tag" content="镜湖月,博客,Blog,Hexo">
+<meta property="article:tag" content="文章漫游">
 <meta name="twitter:card" content="summary_large_image">
   
   <meta name="baidu-site-verification" content="code-n6bkp7lyqx" />
-  <title>镜湖月的小世界</title>
+  <title>博客实现文章随机漫游功能 - 镜湖月的小世界</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -71,7 +88,7 @@
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -199,31 +216,67 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/1.jpg') no-repeat center center;
+         style="background: url('https://gitee.com/jinghu-moon/imgbed/raw/master/images/053 Soft Grass.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="仰天长啸出门去，我辈岂是蓬蒿人">
+            <span class="h2" id="subtitle" title="博客实现文章随机漫游功能">
               
             </span>
 
             
-              
-                  <br>
-                  <span class="h2" id="jinrishici">
-                  
-                  </span>
-              
-          
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      镜湖月
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-20 15:45" pubdate>
+        2022年2月20日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      852 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
 
             
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -232,282 +285,150 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">博客实现文章随机漫游功能</h1>
+            
+              <p class="note note-info">
                 
-
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/b6234a86/" target="_self">
-          <img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/【2022-01-17】slogan.png" srcset="/img/loading.gif" lazyload alt="在首页 Slogan 处添加一言 / 今日诗词">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/b6234a86/" target="_self">
-          在首页 Slogan 处添加一言 / 今日诗词
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/posts/b6234a86/" target="_self">
-          
-          
+                  本文最后更新于：几秒前
+                
+              </p>
             
-          
-          在 Fluid 主题，实现首页 Slogan 处一言 / 今日诗词 / text 的自由切换，同时简单解释代码是如何实现的。
-        </a>
-      </p>
+            <div class="markdown-body">
+              <h2 id="1-1-random-js"><a href="#1-1-random-js" class="headerlink" title="1.1 random.js"></a>1.1 random.js</h2><p>进入 Blog\scripts 路径，新建 <code>random.js</code> 文件。添加以下代码。</p>
+<div class="code-wrapper"><pre><code class="hljs js">hexo.extend.generator.register(<span class="hljs-string">&#x27;random&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">locals</span>) </span>&#123;
+  <span class="hljs-keyword">const</span> config = hexo.config.random || &#123;&#125;
+  <span class="hljs-keyword">const</span> posts = []
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> post <span class="hljs-keyword">of</span> locals.posts.data) &#123;
+    <span class="hljs-keyword">if</span> (post.random !== <span class="hljs-literal">false</span>) posts.push(post.path)
+  &#125;
+  <span class="hljs-keyword">return</span> &#123;
+    <span class="hljs-attr">path</span>: config.path || <span class="hljs-string">&#x27;random/index.html&#x27;</span>,
+    <span class="hljs-attr">data</span>: <span class="hljs-string">`&lt;html&gt;&lt;head&gt;&lt;script&gt;var posts=<span class="hljs-subst">$&#123;<span class="hljs-built_in">JSON</span>.stringify(posts)&#125;</span>;window.open(&#x27;/&#x27;+posts[Math.floor(Math.random() * posts.length)],&quot;_self&quot;)&lt;/script&gt;&lt;/head&gt;&lt;/html&gt;`</span>
+  &#125;
+&#125;)</code></pre></div>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-17 12:43" pubdate>
-              2022-01-17
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/">博客美化</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%B8%80%E8%A8%80/">一言</a>
-            
-              <a href="/tags/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D/">今日诗词</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
+<h2 id="1-2-config-fluid-yml"><a href="#1-2-config-fluid-yml" class="headerlink" title="1.2 _config.fluid.yml"></a>1.2 _config.fluid.yml</h2><p>打开 <code>_config.fluid.yml</code> ，在 <code>navbar</code> 处，添加以下代码。</p>
+<div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">menu:</span>
+    <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;漫游&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/random&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-manyou2&quot;</span> &#125;</code></pre></div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/9113742/" target="_self">
-          <img src="/img/default.png" srcset="/img/loading.gif" lazyload alt="中文技术文档写作规范">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/9113742/" target="_self">
-          中文技术文档写作规范
-        </a>
-      </h1>
+<div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">custom_css:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">//at.alicdn.com/t/font_2976433_kdpcclj023.css</span></code></pre></div>
 
-      <p class="index-excerpt">
-        <a href="/posts/9113742/" target="_self">
-          
-          
-            
-          
-          本文转载于阮一峰老师的《中文技术文档的写作规范》。
-        </a>
-      </p>
+<h2 id="1-3-可选配置"><a href="#1-3-可选配置" class="headerlink" title="1.3 可选配置"></a>1.3 可选配置</h2><p>如果不想随机跳转到某篇文章，只需在这篇文章 <code>Front-matter</code> 添加 <code>random: false</code> 。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.hclonely.com/posts/57bd67ce/">Hexo 博客美化 (hclonely.com)</a></p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-13 21:26" pubdate>
-              2022-01-13
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/">写作规范</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/d87f7e0c/" target="_self">
-          <img src="/img/default.png" srcset="/img/loading.gif" lazyload alt="test">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/d87f7e0c/" target="_self">
-          test
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/posts/d87f7e0c/" target="_self">
-          
-          
-            
-          
-          你好，世界！这是一个测试文档。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-03 13:46" pubdate>
-              2022-01-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/A1/">A1</a>
-            
-              <a href="/categories/A2/">A2</a>
-            
-              <a href="/categories/A2/a1/">a1</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/b211d196/" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/jinghu-moon/Blog-bed@main/image/billy-huynh-v9bnfMCyKbg-unsplash.jpg" srcset="/img/loading.gif" lazyload alt="图片测试">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/b211d196/" target="_self">
-          图片测试
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/posts/b211d196/" target="_self">
-          
-          
-            
-          
-          图床测试
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-12-04 10:44" pubdate>
-              2021-12-04
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/4a17b156/" target="_self">
-          <img src="/img/default.png" srcset="/img/loading.gif" lazyload alt="Hello World">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/4a17b156/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/posts/4a17b156/" target="_self">
-          
-          
-            
-          
-          Welcome to Hexo!
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-12-01 15:02" pubdate>
-              2021-12-01
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/">博客优化</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%96%87%E7%AB%A0%E6%BC%AB%E6%B8%B8/">文章漫游</a>
+                    
+                  </div>
+                
+              </div>
+              
+              <p class="note note-warning">
+                <strong>本文作者: </strong><a href="/">jinghu-moon</a> <br>
+                <strong>本文链接: </strong><a href="https://jinghumoon.top/posts/cca4c55d/">https://jinghumoon.top/posts/cca4c55d/</a> <br>
+                <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                   </p>
+                   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/2335de7c/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo + Github 搭建博客 1 — 预备知识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/3164d411/">
+                        <span class="hidden-mobile">Github SSH 配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"twikoo-1gm6e00d45434bda","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.plugins.initFancyBox('#twikoo .tk-content img:not(.tk-owo-emotion)');
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header">TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -643,6 +564,19 @@
 
 
 
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
 
 
 
@@ -671,9 +605,7 @@
         });
     }
     
-        jinrishici.load(function(result) {
-            typing("jinrishici", result.data.content + '<br /> <h6>' + '——' + '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'+ '</h6>')
-        });
+        typing("subtitle", "博客实现文章随机漫游功能")
     
 
   </script>

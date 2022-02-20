@@ -42,6 +42,31 @@
   
   
   <entry>
+    <title>博客实现文章随机漫游功能</title>
+    <link href="/posts/cca4c55d/"/>
+    <url>/posts/cca4c55d/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-1-random-js"><a href="#1-1-random-js" class="headerlink" title="1.1 random.js"></a>1.1 random.js</h2><p>进入 Blog\scripts 路径，新建 <code>random.js</code> 文件。添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs js">hexo.extend.generator.register(<span class="hljs-string">&#x27;random&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">locals</span>) </span>&#123;  <span class="hljs-keyword">const</span> config = hexo.config.random || &#123;&#125;  <span class="hljs-keyword">const</span> posts = []  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> post <span class="hljs-keyword">of</span> locals.posts.data) &#123;    <span class="hljs-keyword">if</span> (post.random !== <span class="hljs-literal">false</span>) posts.push(post.path)  &#125;  <span class="hljs-keyword">return</span> &#123;    <span class="hljs-attr">path</span>: config.path || <span class="hljs-string">&#x27;random/index.html&#x27;</span>,    <span class="hljs-attr">data</span>: <span class="hljs-string">`&lt;html&gt;&lt;head&gt;&lt;script&gt;var posts=<span class="hljs-subst">$&#123;<span class="hljs-built_in">JSON</span>.stringify(posts)&#125;</span>;window.open(&#x27;/&#x27;+posts[Math.floor(Math.random() * posts.length)],&quot;_self&quot;)&lt;/script&gt;&lt;/head&gt;&lt;/html&gt;`</span>  &#125;&#125;)</code></pre></div><h2 id="1-2-config-fluid-yml"><a href="#1-2-config-fluid-yml" class="headerlink" title="1.2 _config.fluid.yml"></a>1.2 _config.fluid.yml</h2><p>打开 <code>_config.fluid.yml</code> ，在 <code>navbar</code> 处，添加以下代码。</p><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">menu:</span>    <span class="hljs-bullet">-</span> &#123; <span class="hljs-attr">key:</span> <span class="hljs-string">&quot;漫游&quot;</span>, <span class="hljs-attr">link:</span> <span class="hljs-string">&quot;/random&quot;</span>, <span class="hljs-attr">icon:</span> <span class="hljs-string">&quot;iconfont icon-manyou2&quot;</span> &#125;</code></pre></div><div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">custom_css:</span>  <span class="hljs-bullet">-</span> <span class="hljs-string">//at.alicdn.com/t/font_2976433_kdpcclj023.css</span></code></pre></div><h2 id="1-3-可选配置"><a href="#1-3-可选配置" class="headerlink" title="1.3 可选配置"></a>1.3 可选配置</h2><p>如果不想随机跳转到某篇文章，只需在这篇文章 <code>Front-matter</code> 添加 <code>random: false</code> 。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.hclonely.com/posts/57bd67ce/">Hexo 博客美化 (hclonely.com)</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>博客优化</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>文章漫游</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Github SSH 配置</title>
     <link href="/posts/3164d411/"/>
     <url>/posts/3164d411/</url>
