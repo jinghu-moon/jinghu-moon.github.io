@@ -1,1 +1,23 @@
-@font-face{font-family:'LXGW WenKai';src:url(https://cdn.jsdelivr.net/gh/jinghu-moon/Blog_Static_Files@main/font/LXGWWenKai-Regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:its;src:url(font/its.woff);font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Fira;src:url(font/FiraCode-Regular.woff);font-weight:400;font-style:normal;font-display:swap}
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('https://cdn.jsdelivr.net/gh/jinghu-moon/Blog_Static_Files@main/font/LXGWWenKai-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'its';
+    src: url('font/its.woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira';
+    src: url('font/FiraCode-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
