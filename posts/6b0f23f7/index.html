@@ -74,11 +74,12 @@
   
 <link rel="stylesheet" href="/css/ui.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2976433_65yklnbx66q.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2976433_lwk9d9c1g38.css">
 <link rel="stylesheet" href="/css/full_background.css">
 <link rel="stylesheet" href="/css/scrollbar.css">
 <link rel="stylesheet" href="/css/code.css">
 <link rel="stylesheet" href="/css/bookmarks.css">
+<link rel="stylesheet" href="/css/broadcast.css">
 
 
 
@@ -92,6 +93,7 @@
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -220,16 +222,18 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://gitee.com/jinghu-moon/imgbed/raw/master/images/053 Soft Grass.png') no-repeat center center;
-           background-size: cover;">
+        style="background: url('https://gitee.com/jinghu-moon/imgbed/raw/master/images/053 Soft Grass.png') no-repeat center center;
+          background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="博客首页添加公告栏">
               
             </span>
-
+<!-- 添加的代码 -->
+<!-- ========================================================================= -->
             
+<!-- ========================================================================= -->
 
             
               <div class="mt-3">
@@ -253,7 +257,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.1k 字
+      3.2k 字
     </span>
   
 
@@ -303,7 +307,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：14 天前
+                  本文最后更新于：19 天前
                 
               </p>
             
@@ -337,118 +341,119 @@
 <div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/* 小喇叭特效 */</span>
 <span class="hljs-keyword">@keyframes</span> scaleDraw &#123;
 
-    <span class="hljs-comment">/*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/</span>
-    <span class="hljs-number">0%</span> &#123;
-        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
-        <span class="hljs-comment">/*开始为原始大小*/</span>
-    &#125;
+  <span class="hljs-comment">/*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/</span>
+  <span class="hljs-number">0%</span> &#123;
+      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
+      <span class="hljs-comment">/*开始为原始大小*/</span>
+  &#125;
 
-    <span class="hljs-number">25%</span> &#123;
-        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>);
-        <span class="hljs-comment">/*放大1.2倍*/</span>
-    &#125;
+  <span class="hljs-number">25%</span> &#123;
+      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>);
+      <span class="hljs-comment">/*放大1.2倍*/</span>
+  &#125;
 
-    <span class="hljs-number">50%</span> &#123;
-        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
-    &#125;
+  <span class="hljs-number">50%</span> &#123;
+      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
+  &#125;
 
-    <span class="hljs-number">75%</span> &#123;
-        <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>);
-    &#125;
+  <span class="hljs-number">75%</span> &#123;
+      <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.2</span>);
+  &#125;
 &#125;
 
 <span class="hljs-selector-class">.icon-laba</span> &#123;
-    <span class="hljs-attribute">position</span>: relative;
-    <span class="hljs-attribute">top</span>: -<span class="hljs-number">3px</span>;
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
-    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
-    -webkit-<span class="hljs-attribute">animation-name</span>: scaleDraw;
-    <span class="hljs-comment">/*关键帧名称*/</span>
-    -webkit-<span class="hljs-attribute">animation-timing-function</span>: ease-in-out;
-    <span class="hljs-comment">/*动画的速度曲线*/</span>
-    -webkit-<span class="hljs-attribute">animation-iteration-count</span>: infinite;
-    <span class="hljs-comment">/*动画播放的次数*/</span>
-    -webkit-<span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">1.2s</span>;
-    <span class="hljs-comment">/*动画所花费的时间*/</span>
-    -webkit-<span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1.2s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
-    <span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1.2s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">top</span>: -<span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+  -webkit-<span class="hljs-attribute">animation-name</span>: scaleDraw;
+  <span class="hljs-comment">/*关键帧名称*/</span>
+  -webkit-<span class="hljs-attribute">animation-timing-function</span>: ease-in-out;
+  <span class="hljs-comment">/*动画的速度曲线*/</span>
+  -webkit-<span class="hljs-attribute">animation-iteration-count</span>: infinite;
+  <span class="hljs-comment">/*动画播放的次数*/</span>
+  -webkit-<span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">1.2s</span>;
+  <span class="hljs-comment">/*动画所花费的时间*/</span>
+  -webkit-<span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1.2s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">animation</span>: scaleDraw <span class="hljs-number">1.2s</span> ease-in-out infinite <span class="hljs-meta">!important</span>;
 &#125;
 
 <span class="hljs-selector-class">.typed-cursor</span> &#123;
-    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    -webkit-<span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
-    -moz-<span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
-    <span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
-    <span class="hljs-attribute">font-weight</span>: bolder;
-    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">5px</span>;
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  -webkit-<span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
+  -moz-<span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
+  <span class="hljs-attribute">animation</span>: blink <span class="hljs-number">0.7s</span> infinite;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-weight</span>: bolder;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">5px</span>;
 &#125;
 
 <span class="hljs-comment">/* 光标特效 */</span>
 <span class="hljs-keyword">@keyframes</span> blink &#123;
-    <span class="hljs-number">0%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    &#125;
+  <span class="hljs-number">0%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  &#125;
 
-    <span class="hljs-number">50%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
-    &#125;
+  <span class="hljs-number">50%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  &#125;
 
-    <span class="hljs-number">100%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    &#125;
+  <span class="hljs-number">100%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  &#125;
 &#125;
 
 <span class="hljs-keyword">@-webkit-keyframes</span> blink &#123;
-    <span class="hljs-number">0%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    &#125;
+  <span class="hljs-number">0%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  &#125;
 
-    <span class="hljs-number">50%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
-    &#125;
+  <span class="hljs-number">50%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  &#125;
 
-    <span class="hljs-number">100%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    &#125;
+  <span class="hljs-number">100%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  &#125;
 &#125;
 
 <span class="hljs-keyword">@-moz-keyframes</span> blink &#123;
-    <span class="hljs-number">0%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    &#125;
+  <span class="hljs-number">0%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  &#125;
 
-    <span class="hljs-number">50%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
-    &#125;
+  <span class="hljs-number">50%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+  &#125;
 
-    <span class="hljs-number">100%</span> &#123;
-        <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
-    &#125;
+  <span class="hljs-number">100%</span> &#123;
+      <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  &#125;
 &#125;
 
 <span class="hljs-selector-class">.notice_board</span> &#123;
-    <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
 &#125;
 
 <span class="hljs-selector-class">.notice</span> &#123;
-    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.5rem</span>;
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">7px</span>;
-    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">13px</span>;
+  <span class="hljs-comment">/* background-color: #fff !important; */</span>
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.5rem</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">7px</span>;
+  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">13px</span>;
 &#125;</code></pre></div>
 
 <h2 id="1-3-layout-ejs"><a href="#1-3-layout-ejs" class="headerlink" title="1.3 layout.ejs"></a>1.3 layout.ejs</h2><p>进入 Blog\themes\fluid\layout 路径，打开 <code>layout.ejs</code> 文件。添加以下代码。</p>
 <div class="code-wrapper"><pre><code class="hljs ejs">&lt;main&gt;
-    &lt;% if(is_post() || page.layout === &#x27;404&#x27;) &#123; %&gt;
-      &lt;%- body %&gt;
-    &lt;% &#125; else &#123; %&gt;
-      &lt;div class=&quot;container nopadding-x-md&quot;&gt;
-        &lt;!-- 公告栏 添加代码 --&gt;
-        &lt;div id=&quot;board&quot; class=&quot;notice_board&quot;&gt;
-          &lt;% if (theme.broadcast.enable)&#123; %&gt;
-          &lt;%- partial(&#x27;_partial/broadcast&#x27;) %&gt;
-          &lt;% &#125; %&gt;
-        &lt;/div&gt;</code></pre></div>
+  &lt;% if(is_post() || page.layout === &#x27;404&#x27;) &#123; %&gt;
+    &lt;%- body %&gt;
+  &lt;% &#125; else &#123; %&gt;
+    &lt;div class=&quot;container nopadding-x-md&quot;&gt;
+      &lt;!-- 添加代码 公告栏 --&gt;
+      &lt;div id=&quot;board&quot; class=&quot;notice_board&quot;&gt;
+        &lt;% if (theme.broadcast.enable)&#123; %&gt;
+        &lt;%- partial(&#x27;_partial/broadcast&#x27;) %&gt;
+        &lt;% &#125; %&gt;
+      &lt;/div&gt;</code></pre></div>
 
 <h2 id="1-4-config-fluid-yml"><a href="#1-4-config-fluid-yml" class="headerlink" title="1.4 _config.fluid.yml"></a>1.4 _config.fluid.yml</h2><p>在 <code>_config.fluid.yml</code> 中添加以下代码。</p>
 <div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-comment"># 公告栏</span>
@@ -458,13 +463,18 @@
   <span class="hljs-attr">text:</span> <span class="hljs-string">看的文章越多，越深感自己的不足，后面的时间，我将把精力放在学习新知识上。博客将停更一段时间。等我回来！</span></code></pre></div>
 
 <p>建议 <strong>text</strong> 字数不要超过 50。字数大于 63，就会换行。</p>
-<p>引入 JS。</p>
-<div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">custom_js:</span>
-  <span class="hljs-bullet">-</span> <span class="hljs-string">//at.alicdn.com/t/font_2976433_kdpcclj023.js</span></code></pre></div>
+<p>引入 JS、CSS。</p>
+<div class="code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">custom_js:</span> <span class="hljs-string">//at.alicdn.com/t/font_2976433_lwk9d9c1g38.js</span>
+
+<span class="hljs-attr">custom_css:</span> <span class="hljs-string">/css/broadcast.css</span></code></pre></div>
 
 <p>使用 <a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里巴巴矢量图标库</a> 的彩色图标，需要引入 JS，不是引入 CSS。</p>
 <p>使用方法： <a target="_blank" rel="noopener" href="https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&helptype=code">图标使用介绍 - 阿里巴巴矢量图标库</a> 。</p>
 <p>同时测试得：<strong>font-class</strong> 引用，不能实现图标动画效果。<strong>symbol</strong> 引用，可以实现。</p>
+<blockquote>
+<p><font style="color:#ed1c24;font-weight:bolder;">注意</font>：</p>
+<p>此处引入的 JS，是我的图标库，随着图标的添加，它是会变化的。所以我建议你在 iconfont 在建立一个自己的图标项目。</p>
+</blockquote>
 <p>完成效果如下：</p>
 <p><img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/01%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.gif" srcset="/img/loading.gif" lazyload alt="01~效果展示"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
@@ -805,14 +815,24 @@ typing("hitokoto", '『' + data.hitokoto + '』' + '<br /> <h5>'+ '——' + '�
 <script src="/js/full_background.js"></script>
 <script src="/js/code%20folding.js"></script>
 <script src="/js/bookmarks.js"></script>
+<script src="//at.alicdn.com/t/font_2976433_lwk9d9c1g38.js"></script>
 
 
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
 
+  <!-- <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "Guan Qing 的个人博客", clearTimeout(st)) : (document.title = OriginTitile)
+    })
+  </script> -->
 
 <!-- hexo injector body_end start --><script src="/js/full_background.js"></script>
   <link defer rel="stylesheet" href="/css/full_background.css" />
   <!-- hexo injector body_end end --></body>
 </html>
+
+<!-- 注意，不能用代码格式化插件格式化代码 -->

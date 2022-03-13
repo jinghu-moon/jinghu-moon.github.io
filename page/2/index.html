@@ -54,11 +54,12 @@
   
 <link rel="stylesheet" href="/css/ui.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_2976433_65yklnbx66q.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2976433_lwk9d9c1g38.css">
 <link rel="stylesheet" href="/css/full_background.css">
 <link rel="stylesheet" href="/css/scrollbar.css">
 <link rel="stylesheet" href="/css/code.css">
 <link rel="stylesheet" href="/css/bookmarks.css">
+<link rel="stylesheet" href="/css/broadcast.css">
 
 
 
@@ -72,6 +73,7 @@
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -200,15 +202,16 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/1.jpg') no-repeat center center;
-           background-size: cover;">
+        style="background: url('/img/1.jpg') no-repeat center center;
+          background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="仰天长啸出门去，我辈岂是蓬蒿人">
               
             </span>
-
+<!-- 添加的代码 -->
+<!-- ========================================================================= -->
             
               
                   <br>
@@ -217,6 +220,7 @@
                   </span>
               
           
+<!-- ========================================================================= -->
 
             
           </div>
@@ -234,6 +238,33 @@
   <main>
     
       <div class="container nopadding-x-md">
+        <!-- 公告栏 -->
+        <div id="board" class="notice_board">
+          
+          
+  <div class="notice">
+      <svg class="icon-laba" aria-hidden="true">
+          <use xlink:href="#icon-laba"></use>
+      </svg>
+      <span class="notice-content">
+          <span class="element"></span>
+      </span>
+  </div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.12/typed.js"></script>
+  <script>
+      var typed = new Typed(".element", {
+          strings: ["看的文章越多，越深感自己的不足，后面的时间，我将把精力放在学习新知识上。博客将停更一段时间。等我回来！"],  //输入内容, 支持html标签
+          startDelay: 0,                             //开始延迟
+          typeSpeed: 50,                             //打字速度，数字越大，速度越慢。
+          backSpeed: 75,                             //回退速度
+          loop: false,                               //是否循环
+          showCursor: true,                          //显示游标
+          cursorChar: '_',                           //游标样式
+      });
+  </script>
+
+          
+        </div>
         <div class="py-5" id="board"
           style=margin-top:0>
           
@@ -726,14 +757,24 @@ typing("hitokoto", '『' + data.hitokoto + '』' + '<br /> <h5>'+ '——' + '�
 <script src="/js/full_background.js"></script>
 <script src="/js/code%20folding.js"></script>
 <script src="/js/bookmarks.js"></script>
+<script src="//at.alicdn.com/t/font_2976433_lwk9d9c1g38.js"></script>
 
 
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
 
+  <!-- <script type="text/javascript">
+    var OriginTitile = document.title,
+        st;
+    document.addEventListener("visibilitychange", function () {
+        document.hidden ? (document.title = "Guan Qing 的个人博客", clearTimeout(st)) : (document.title = OriginTitile)
+    })
+  </script> -->
 
 <!-- hexo injector body_end start --><script src="/js/full_background.js"></script>
   <link defer rel="stylesheet" href="/css/full_background.css" />
   <!-- hexo injector body_end end --></body>
 </html>
+
+<!-- 注意，不能用代码格式化插件格式化代码 -->
