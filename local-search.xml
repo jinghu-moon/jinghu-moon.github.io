@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>See Yue，一款 Typora 主题介绍</title>
+    <link href="/posts//"/>
+    <url>/posts//</url>
+    
+    <content type="html"><![CDATA[<p>See Yue 主题以  <a href="https://github.com/blinkfox/typora-vue-theme">vue</a> 主题为框架，参考了网上诸多的教程和 Typora 主题，制作出来。非常感谢他们的无私分享！</p><p><span style="color:#b91919;font-weight:bolder">注意：</span>See Yue 主题是我学习 CSS 的练手之作，代码风格可能极其不规范。不过大部分代码，我都写了注释，应该还是比较好理解的。</p><h2 id="1-1-设计思路"><a href="#1-1-设计思路" class="headerlink" title="1.1 设计思路"></a>1.1 设计思路</h2><h2 id="1-2-主题文件"><a href="#1-2-主题文件" class="headerlink" title="1.2 主题文件"></a>1.2 主题文件</h2><h3 id="1-2-1-资源文件"><a href="#1-2-1-资源文件" class="headerlink" title="1.2.1 资源文件"></a>1.2.1 资源文件</h3><p>下面是一些主题使用到的资源文件。</p><table><thead><tr><th>文件夹</th><th>用途</th></tr></thead><tbody><tr><td>Chinese_fonts</td><td>中文字体</td></tr><tr><td>English_fonts</td><td>英文字体</td></tr><tr><td>lcon</td><td>部分网站 logo</td></tr><tr><td>lcon_font</td><td>主题使用的图标</td></tr><tr><td>Picture</td><td>毛玻璃效果的背景图</td></tr></tbody></table><h3 id="1-2-2-CSS-文件"><a href="#1-2-2-CSS-文件" class="headerlink" title="1.2.2 CSS 文件"></a>1.2.2 CSS 文件</h3><p>由于主题功能多，代码量也比较大，为便于使用者自定义，我将代码分割成不同的 CSS 文件，每一份 CSS 文件都有着独立且不同的功能。下面是主题的 CSS 文件及其用途。</p><p> <code>2</code> 到 <code>12</code> 的 CSS 文件，为功能实现文件，已在 <code>see-yue.css</code> 引入。 <code>13</code> 到 <code>14</code> 的 CSS 文件，为参考文件，可作为样式修改参考。</p><table><thead><tr><th align="center">序号</th><th align="left">文件</th><th>用途</th><th>备注</th></tr></thead><tbody><tr><td align="center">1</td><td align="left"><code>see-yue.css</code></td><td>主题主体部分</td><td></td></tr><tr><td align="center">2</td><td align="left"><code>auto-number.css</code></td><td>大纲、正文目录、正文标题自动编号</td><td>可选</td></tr><tr><td align="center">3</td><td align="left"><code>code-block.css</code></td><td>代码块样式设置</td><td><strong>必选</strong></td></tr><tr><td align="center">4</td><td align="left"><code>code-language.css</code></td><td>代码块显示编程语言。</td><td>可选</td></tr><tr><td align="center">5</td><td align="left"><code>code-snippet.css</code></td><td>零散的样式修改</td><td><strong>必选</strong></td></tr><tr><td align="center">6</td><td align="left"><code>contents.css</code></td><td>正文目录样式设置</td><td>可选</td></tr><tr><td align="center">7</td><td align="left"><code>fonts.css</code></td><td>字体引用</td><td><strong>必选</strong></td></tr><tr><td align="center">8</td><td align="left"><code>frosted-glass.css</code></td><td>毛玻璃效果，</td><td>可选。雏形，不建议使用。</td></tr><tr><td align="center">9</td><td align="left"><code>headline.css</code></td><td>标题样式设置</td><td><strong>必选</strong></td></tr><tr><td align="center">10</td><td align="left"><code>sidebar.css</code></td><td>侧边栏设置</td><td><strong>必选</strong></td></tr><tr><td align="center">11</td><td align="left"><code>to-pdf.css</code></td><td>导出 PDF 设置</td><td><strong>必选</strong></td></tr><tr><td align="center">12</td><td align="left"><code>website-icon.css</code></td><td>显示部分网站 logo</td><td>可选</td></tr><tr><td align="center">13</td><td align="left"><code>nord.css</code></td><td>代码块配色</td><td>作参考，未使用。</td></tr><tr><td align="center">14</td><td align="left"><code>root-attribute.css</code></td><td>根属性</td><td>有注释，可作为参考。</td></tr></tbody></table><p>我的选择如下：</p><img src="See-Yue，一款-Typora-主题介绍images/01-配置.png" alt="01-配置" style="zoom: 80%;" /><h2 id="1-3-主题功能"><a href="#1-3-主题功能" class="headerlink" title="1.3 主题功能"></a>1.3 主题功能</h2>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hexo + Github 搭建博客 2 — 初步搭建</title>
     <link href="/posts/4b3e013f/"/>
     <url>/posts/4b3e013f/</url>
