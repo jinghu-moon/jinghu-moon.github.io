@@ -7,6 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jinghu-moon/Blog_Static_Files@main/css/loading.css">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Serif+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
   <link rel="icon" href="/img/avatar.png">
@@ -116,7 +117,131 @@
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    html,
+    body {
+      margin: 0;
+      background-color: transparent;
+      color: whitesmoke;
+    }
+
+    #loader {
+      position: absolute;
+      width: 10em;
+      height: 10em;
+      top: calc(50% - 5em);
+      left: calc(50% - 5em);
+      /* border: 2px ssolid pink; */
+      background-color: #404456;
+    }
+
+    /* 两端有圆角 */
+    .hill {
+      position: absolute;
+      width: 14em;
+      height: 0em;
+      top: 100%;
+      left: 0;
+      background-color: #000;
+      border: .25em solid #f5f5f5;
+      border-radius: 10px;
+      transform: rotate(-45deg);
+      transform-origin: top left;
+    }
+
+    /* 两端无圆角 */
+    /* .hill {
+          position: absolute;
+          width: 14em;
+          height: 5em;
+          top: 100%;
+          left: 0;
+          background-color: transparent;
+          border-top: .5em solid whitesmoke;
+          transform: rotate(-45deg);
+          transform-origin: top left;
+        } */
+
+
+    .box {
+      position: absolute;
+      left: 0;
+      bottom: -.6em;
+      width: 2em;
+      height: 2em;
+      background-color: transparent;
+      border: .45em solid whitesmoke;
+      border-radius: 15%;
+      transform: translate(0, -2em) rotate(-45deg);
+      /* 动画 */
+      animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+    }
+
+    /* 动画 */
+    @keyframes push {
+      0% {
+        transform: translate(0, -2em) rotate(-45deg);
+      }
+
+      5% {
+        transform: translate(0, -2em) rotate(-50deg);
+      }
+
+      20% {
+        transform: translate(2em, -4em) rotate(45deg);
+      }
+
+      25% {
+        transform: translate(2em, -4em) rotate(40deg);
+      }
+
+      40% {
+        transform: translate(4em, -6em) rotate(135deg);
+      }
+
+      45% {
+        transform: translate(4em, -6em) rotate(130deg);
+      }
+
+      60% {
+        transform: translate(6em, -8em) rotate(225deg);
+      }
+
+      65% {
+        transform: translate(6em, -8em) rotate(220deg);
+      }
+
+      /* 80% {
+        transform: translate(8em, -10em) rotate(315deg);
+      }
+
+      85% {
+        transform: translate(8em, -10em) rotate(310deg);
+      } */
+
+      100% {
+        transform: translate(0, -2em) rotate(-225deg);
+      }
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jinghu-moon/Blog_Static_Files@main/css/loading.css"> -->
+  <div id="loader">
+    <div class="box"></div>
+    <div class="hill"></div>
+  </div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loading");
+    }
+    window.addEventListener('load', endLoading);
+  </script>
+  
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
@@ -776,7 +901,13 @@ typing("hitokoto", '『' + data.hitokoto + '』' + '<br /> <h5>'+ '——' + '�
         document.hidden ? (document.title = "Guan Qing 的个人博客", clearTimeout(st)) : (document.title = OriginTitile)
     })
   </script> -->
-
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+</script>
 <!-- hexo injector body_end start --><script src="/js/full_background.js"></script>
   <link defer rel="stylesheet" href="/css/full_background.css" />
   <!-- hexo injector body_end end --></body>
