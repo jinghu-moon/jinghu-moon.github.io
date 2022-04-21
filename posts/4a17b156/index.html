@@ -127,10 +127,7 @@
       height: 100%;
       background: #404456 !important;
       z-index: 9999;
-      -webkit-transition: opacity 2.5s ease;
-      -moz-transition: opacity 2.5s ease;
-      -o-transition: opacity 2.5s ease;
-      transition: opacity 2.5s ease;
+      animation: disappear 3s ease-in-out 1;
     }
 
     #loader {
@@ -139,7 +136,6 @@
       height: 10em;
       top: calc(50% - 5em);
       left: calc(50% - 5em);
-      /* border: 2px ssolid pink; */
       background-color: #404456;
     }
 
@@ -234,10 +230,36 @@
       }
     }
 
-    .fade-out {
+    @keyframes disappear {
+      0% {
+        opacity: 1;
+      }
+
+      20% {
+        opacity: .8;
+      }
+
+      40% {
+        opacity: .6;
+      }
+
+      60% {
+        opacity: .4;
+      }
+
+      80% {
+        opacity: .2;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* .fade-out {
       opacity: 0;
       filter: alpha(opacity=0);
-    }
+    } */
   </style>
   <!-- 页面加载动画 -->
   <script>
@@ -246,14 +268,14 @@
         setTimeout(function () {
           const bg = document.getElementById("bg");
           const loader = document.getElementById("loader");
-          bg.className = "fade-out"; //使用渐隐的方法淡出loading page
-          // loader.className = "fade-out"; //使用渐隐的方法淡出loading page
-          // document.getElementById("body-wrap").style.display="flex";
+          bg.className = "disappear"; //使用渐隐的方法淡出 loading page
+          // bg.className = "fade-out"; //使用渐隐的方法淡出 loading page
+          loader.className = "disappear"; //使用渐隐的方法淡出 loading page
           setTimeout(function () {
             bg.style.display = "none";
             loader.style.display = "none";
           }, 2500);
-        }, ); //强制显示loading page 700ms
+        }, ); //强制显示 loading page 秒数
       };
       loaded();
     })()
@@ -286,8 +308,6 @@
     </div>
   </div> -->
   <div id="bg">
-    <div class="left-bg"></div>
-    <div class="right-bg"></div>
     <div id="loader">
       <div class="box"></div>
       <div class="hill"></div>
