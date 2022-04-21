@@ -156,6 +156,7 @@
       border-radius: 10px;
       transform: rotate(-45deg);
       transform-origin: top left;
+      z-index: 1000;
     }
 
     /* 两端无圆角 */
@@ -184,6 +185,7 @@
       transform: translate(0, -2em) rotate(-45deg);
       /* 动画 */
       animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+      z-index: 1000;
     }
 
     /* 动画 */
@@ -285,6 +287,8 @@
     </div>
   </div> -->
   <div id="bg">
+    <div class="left-bg"></div>
+    <div class="right-bg"></div>
     <div id="loader">
       <div class="box"></div>
       <div class="hill"></div>
