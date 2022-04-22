@@ -93,206 +93,197 @@
 
 
 <body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
-
   
-  <style>
-    * {
-      box-sizing: border-box;
+  
+    <!-- Copyright (c) 2022 by Pawel (https://codepen.io/pawelqcm/pen/LbgvmM) -->
+<!-- Thinks! -->
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #bg {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: radial-gradient(ellipse at center, whitesmoke 0%, #2e3440 200%);
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  #loader {
+    position: relative;
+    margin: 0 auto;
+    top: 20vh;
+    width: 40vh;
+    height: 40vh;
+    background-color: transparent;
+    transform: scale(0.8);
+  }
+
+  .bigBox {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 23%;
+    background-color: transparent;
+    border: 0.8vh solid #404456;
+    border-radius: 0.75vh;
+    transform: rotate(45deg);
+    animation: bigBox 1s cubic-bezier(0.8, 0, 0.4, 0.8) infinite;
+  }
+
+  .bigBox:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: whitesmoke;
+    box-shadow: inset 0 0 10vh 0 #c3c6d2;
+  }
+
+  .littleBox {
+    position: absolute;
+    left: 10%;
+    bottom: 30.5%;
+    width: 10%;
+    height: 10%;
+    background-color: transparent;
+    border: 0.65vh solid #404456;
+    border-radius: 0.75vh;
+    box-shadow: inset 0 0 2.5vh 0 #c3c6d2;
+    transform: translate(0, 0) rotate(-60deg);
+    animation: littleBox 1s cubic-bezier(0.8, 0, 0.5, 0.8) infinite;
+  }
+
+  #bg,
+  #loader {
+    /* 消失动画 */
+    animation: disappear 3s ease-in-out 1;
+  }
+
+  /* 大盒子 */
+  @keyframes bigBox {
+    0% {
+      transform: rotate(-55deg);
     }
 
-    #bg {
-      position: fixed;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      background: #404456 !important;
-      z-index: 9999;
-      animation: disappear 10s ease-in-out 1;
-    }
-
-    #loader {
-      position: fixed;
-      width: 10em;
-      height: 10em;
-      top: calc(50% - 5em);
-      left: calc(50% - 5em);
-      background-color: #404456;
-    }
-
-    /* 两端有圆角 */
-    .hill {
-      position: absolute;
-      width: 14em;
-      height: 0em;
-      top: 100%;
-      left: 0;
-      background-color: #000;
-      border: .25em solid #f5f5f5;
-      border-radius: 10px;
+    20% {
       transform: rotate(-45deg);
-      transform-origin: top left;
-      z-index: 1000;
     }
 
-    /* 两端无圆角 */
-    /* .hill {
-      position: absolute;
-      width: 14em;
-      height: 5em;
-      top: 100%;
-      left: 0;
-      background-color: transparent;
-      border-top: .5em solid whitesmoke;
+    60% {
       transform: rotate(-45deg);
-      transform-origin: top left;
-    } */
-
-
-    .box {
-      position: absolute;
-      left: 0;
-      bottom: -.6em;
-      width: 2em;
-      height: 2em;
-      background-color: transparent;
-      border: .45em solid whitesmoke;
-      border-radius: 15%;
-      transform: translate(0, -2em) rotate(-45deg);
-      /* 动画 */
-      animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
-      z-index: 1000;
     }
 
-    /* 动画 */
-    @keyframes push {
-      0% {
-        transform: translate(0, -2em) rotate(-45deg);
-      }
-
-      5% {
-        transform: translate(0, -2em) rotate(-50deg);
-      }
-
-      20% {
-        transform: translate(2em, -4em) rotate(45deg);
-      }
-
-      25% {
-        transform: translate(2em, -4em) rotate(40deg);
-      }
-
-      40% {
-        transform: translate(4em, -6em) rotate(135deg);
-      }
-
-      45% {
-        transform: translate(4em, -6em) rotate(130deg);
-      }
-
-      60% {
-        transform: translate(6em, -8em) rotate(225deg);
-      }
-
-      65% {
-        transform: translate(6em, -8em) rotate(220deg);
-      }
-
-      /* 80% {
-        transform: translate(8em, -10em) rotate(315deg);
-      }
-
-      85% {
-        transform: translate(8em, -10em) rotate(310deg);
-      } */
-
-      100% {
-        transform: translate(0, -2em) rotate(-225deg);
-      }
+    80% {
+      transform: rotate(-35deg);
     }
 
-    @keyframes disappear {
-      0% {
-        opacity: 1;
-      }
+    100% {
+      transform: rotate(-145deg);
+    }
+  }
 
-      20% {
-        opacity: .8;
-      }
-
-      40% {
-        opacity: .6;
-      }
-
-      60% {
-        opacity: .4;
-      }
-
-      80% {
-        opacity: .2;
-      }
-
-      100% {
-        opacity: 0;
-      }
+  /* 小盒子 */
+  @keyframes littleBox {
+    0% {
+      transform: translate(0, 0) rotate(-60deg);
     }
 
-    /* .fade-out {
+    30% {
+      transform: translate(100%, -100%) rotate(50deg);
+    }
+
+    55% {
+      transform: translate(100%, -100%) rotate(45deg);
+    }
+
+    80% {
+      transform: translate(200%, -200%) rotate(135deg);
+    }
+
+    100% {
+      transform: translate(0, 0) rotate(120deg);
+    }
+  }
+
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+
+    10% {
+      opacity: .9;
+    }
+
+    20% {
+      opacity: .8;
+    }
+
+    30% {
+      opacity: .7;
+    }
+
+    40% {
+      opacity: .6;
+    }
+
+    50% {
+      opacity: .5;
+    }
+
+    60% {
+      opacity: .4;
+    }
+
+    70% {
+      opacity: .3;
+    }
+
+    80% {
+      opacity: .2;
+    }
+
+    90% {
+      opacity: .1;
+    }
+
+    100% {
       opacity: 0;
-      filter: alpha(opacity=0);
-    } */
-  </style>
-  <!-- 页面加载动画 -->
-  <script>
-    (function () {
-      const loaded = function () {
-        setTimeout(function () {
-          const bg = document.getElementById("bg");
-          const loader = document.getElementById("loader");
-          bg.className = "disappear"; //使用渐隐的方法淡出 loading page
-          // bg.className = "fade-out"; //使用渐隐的方法淡出 loading page
-          loader.className = "disappear"; //使用渐隐的方法淡出 loading page
-          setTimeout(function () {
-            bg.style.display = "none";
-            loader.style.display = "none";
-          }, 2500);
-        }, ); //强制显示 loading page 秒数
-      };
-      loaded();
-    })()
-  </script>
-  <!-- <script>
-    var preloader = {
-      endLoading: () => {
-        document.body.style.overflow = 'auto';
-        document.getElementById('loader').classList.add("loaded")
-      },
-      initLoading: () => {
-        document.body.style.overflow = '';
-        document.getElementById('loader').classList.remove("loaded")
-
-      }
     }
-    window.addEventListener('load', preloader.endLoading())
-  </script> -->
-  <!-- <div id="loading-box">
-    <div class="loading-left-bg"></div>
-    <div class="loading-right-bg"></div>
-    <div class="spinner-box">
-      <div class="configure-border-1">
-        <div class="configure-core"></div>
-      </div>
-      <div class="configure-border-2">
-        <div class="configure-core"></div>
-      </div>
-      <div class="loading-word">加载中...</div>
-    </div>
-  </div> -->
-  <div id="bg">
-    <div id="loader">
-      <div class="box"></div>
-      <div class="hill"></div>
-    </div>
+  }
+</style>
+<div id="bg">
+  <div id="loader">
+    <div class="littleBox"></div>
+    <div class="bigBox"></div>
   </div>
+</div>
+<script>
+  const loaded = function () {
+    setTimeout(function () {
+      const bg = document.getElementById("bg");
+      const loader = document.getElementById("loader");
+      bg.className = "disappear"; // 使用渐隐的方法淡出 loading page
+      loader.className = "disappear"; // 使用渐隐的方法淡出 loading page
+      loader.style.display = "none"; // 去除加载动画
+      bg.style.display = "none"; // 去除加载页背景
+    }, 3000); // 强制显示 loading page 时间
+  };
+  loaded();
+</script>
+  
+  
+  
+  
+  
   
   <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
@@ -722,13 +713,6 @@ typing("hitokoto", '『' + data.hitokoto + '』' + '<br /> <h5>'+ '——' + '�
         document.hidden ? (document.title = "Guan Qing 的个人博客", clearTimeout(st)) : (document.title = OriginTitile)
     })
   </script> -->
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded");
-  }
-  window.addEventListener('load', endLoading);
-</script>
 <!-- hexo injector body_end start --><script src="/js/full_background.js"></script>
   <link defer rel="stylesheet" href="/css/full_background.css" />
   <!-- hexo injector body_end end --></body>
