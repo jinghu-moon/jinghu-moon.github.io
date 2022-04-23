@@ -162,12 +162,6 @@
     animation: littleBox 1s cubic-bezier(0.8, 0, 0.5, 0.8) infinite;
   }
 
-  #bg,
-  #loader {
-    /* 消失动画 */
-    animation: disappear 3s ease-in-out 1;
-  }
-
   /* 大盒子 */
   @keyframes bigBox {
     0% {
@@ -212,6 +206,12 @@
     100% {
       transform: translate(0, 0) rotate(120deg);
     }
+  }
+
+  /* 消失动画 */
+  #bg,
+  #loader {
+    animation: disappear 5s ease-in-out 1;
   }
 
   @keyframes disappear {
@@ -275,7 +275,7 @@
       loader.className = "disappear"; // 使用渐隐的方法淡出 loading page
       loader.style.display = "none"; // 去除加载动画
       bg.style.display = "none"; // 去除加载页背景
-    }, 3000); // 强制显示 loading page 时间
+    }, 5000); // 强制显示 loading page 时间
   };
   loaded();
 </script>
@@ -484,6 +484,48 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/1372c469/" target="_self">
+          <img src="/img/default.png" srcset="/img/loading.gif" lazyload alt="为你的博客添加 Loading 动画">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/1372c469/" target="_self">
+          为你的博客添加 Loading 动画
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/posts/1372c469/" target="_self">
+          
+          
+            
+          
+          方法比较简单，稍作修改，应该可以适配大多数 Hexo 主题。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-22 23:48" pubdate>
+              2022-04-22
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -956,62 +998,6 @@ See Yue 主题以  vue 主题为框架，参考了网上诸多的教程和 Typor
               <a href="/tags/Twikoo/">Twikoo</a>
             
               <a href="/tags/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA/">博客评论</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/3a62d20/" target="_self">
-          <img src="https://gitee.com/jinghu-moon/imgbed/raw/master/images/2022-01-28~Article_translation.png" srcset="/img/loading.gif" lazyload alt="为你的博客添加谷歌翻译">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/3a62d20/" target="_self">
-          为你的博客添加谷歌翻译
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/posts/3a62d20/" target="_self">
-          
-          
-            
-          
-          博客添加谷歌翻译，针对 Fluid 主题做了些小修改。别的主题可以根据主题配置文件进行相应的修改。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-28 18:18" pubdate>
-              2022-01-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/">博客优化</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%B0%B7%E6%AD%8C%E7%BF%BB%E8%AF%91/">谷歌翻译</a>
             
           </div>
         
